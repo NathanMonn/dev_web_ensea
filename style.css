@@ -1,21 +1,29 @@
-h1{
-	text-align: center;
-	color: aqua;
-}
 body{
 	margin: 0px;
+	height: max-content;
 }
 header{
 	margin: 0px;
 	height: 10%;
 	background-color: black;
 }
+h1{
+	text-align: center;
+	color: aqua;
+	margin: 0px;
+}
 .navigation{
-	background-color: gold;
+	background-color: rgb(0, 217, 255);
 	float: left;
 	width: 20%;
+	height: 80%;
 }
 .page{
 	float: left;
 	width: 80%;
+}
+footer{
+	height: 10%;
+	background-color: black;
+	margin-bottom: 0px;
 }
