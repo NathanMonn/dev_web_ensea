@@ -2,3 +2,20 @@ h1{
 	text-align: center;
 	color: aqua;
 }
+body{
+	margin: 0px;
+}
+header{
+	margin: 0px;
+	height: 10%;
+	background-color: black;
+}
+.navigation{
+	background-color: gold;
+	float: left;
+	width: 20%;
+}
+.page{
+	float: left;
+	width: 80%;
+}
