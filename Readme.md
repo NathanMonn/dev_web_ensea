@@ -5,7 +5,7 @@
 - [Crédits](#crédits)
 
 ## La page actuellement
-![Screenshot](Capture_d_ecran_page.png)
+![Screenshot](2Capture_d_ecran_page.png)
 <!--Vous pouvez voir la page en action ici : [Voir la page HTML](page.html)
 <iframe src="page.html" width="100%" height="500"></iframe>-->
 
