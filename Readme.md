@@ -1,7 +1,7 @@
 # Dossier pour le cours de développement Web
 
 ## Table des matières
-- [Usage](#usage)
+- [Visualisation actuel](#la-page-actuellement)
 - [Crédits](#crédits)
 
 ## La page actuellement
