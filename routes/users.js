@@ -15,7 +15,7 @@ router.get("/users", (req, res) => {
 
 
 // POST : CRÉER un nouvel utilisateur, basé sur les données passées dans le corps(body) de la requête
-router.post("/", (req, res) => {
+router.post("/users", (req, res) => {
 	// récupérer toutes les données qui arrivent dans le corps de la requête (body)
 	const { firstName, lastName } = req.body
 
@@ -52,7 +52,7 @@ router.post("/", (req, res) => {
 })*/
 
 // GET : LIRE tous les utilisateurs
-router.put("/", (req, res) => {
+router.put("/users/:id", (req, res) => {
 	// récupérer toutes les données qui arrivent dans le corps de la requête (body)
 	const { firstName, lastName } = req.body
 	const id = parseInt(req.params.id)
@@ -72,7 +72,7 @@ router.put("/", (req, res) => {
 })
 
 // GET : LIRE tous les utilisateurs
-router.delete("/", (req, res) => {
+router.delete("/users/:id", (req, res) => {
 	const id = parseInt(req.params.id)
 	// trouve son index, verifier si le userIndex est positive
 	const userIndex = users.findIndex((user) => user.id === id)
