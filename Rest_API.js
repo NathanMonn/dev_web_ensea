@@ -54,19 +54,59 @@ app.post("/", (req, res) => {
 
 // GET : LIRE tous les utilisateurs
 app.get("/", (req, res) => {
-	res.json(users)
+	const id = parseInt(req.params.id)
+
+	// trouve son index, verifier si le userIndex est positive
+	const userIndex = users.findIndex((user) => user.id === id)
+
+	// utilisateur non trouvé
+	if (userIndex < 0)
+		return res.status(404).json({ msg: "utilisateur non trouvé" })
+	// si el est trouvé
+	res.json(users[userIndex])
+	//res.json(users)
 })
 
 // GET : LIRE tous les utilisateurs
 app.put("/", (req, res) => {
+	// récupérer toutes les données qui arrivent dans le corps de la requête (body)
+	const { firstName, lastName } = req.body
+	const id = parseInt(req.params.id)
+	// trouve son index, verifier si le userIndex est positive
+	const userIndex = users.findIndex((user) => user.id === id)
+		// utilisateur non trouvé
+		if (userIndex < 0)
+			return res.status(404).json({ msg: "utilisateur non trouvé" })
+	// si el est trouvé, nous vérifions quelles valeurs ont été envoyées
+
+	if (firstName) users[userIndex].firstName = firstName
+	if (lastName) users[userIndex].lastName = lastName
 	res.json({
-		msg: "ici le PUT !!!",
+		msg: "utilisateur mis à jour",
+		user: users[userIndex],
 	})
+	/*res.json({
+		msg: "ici le PUT !!!",
+	})*/
 })
 
 // GET : LIRE tous les utilisateurs
 app.delete("/", (req, res) => {
+	const id = parseInt(req.params.id)
+	// trouve son index, verifier si le userIndex est positive
+	const userIndex = users.findIndex((user) => user.id === id)
+
+	// utilisateur non trouvé
+	if (userIndex < 0)
+		return res.status(404).json({ msg: "utilisateur non trouvé" })
+
+	// si el est trouvé
+	users.splice(userIndex, 1)
+
+	res.json({
+		msg: "utilisateur suprimée",
+	})/*
 	res.json({
 		msg: "ici le Delete !!!",
-	})
+	})*/
 })
