@@ -11,6 +11,8 @@ Les fichiers pour le tp sont :
  - Rest_API.js
  - database.js
  - users.js
+ - usersControllers.js
+ - seed.js
 
 ## La page actuellement
 ![Screenshot](2Capture_d_ecran_page.png)
