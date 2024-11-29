@@ -61,35 +61,19 @@ function writeDom(){
 					</div>
 				</div>
 			</article>
-			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h1 class="modal-title fs-5" id="exampleModalLabel">Titre du modal</h1>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							Détails du jeu
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-						</div>
-					</div>
-				</div>
-			</div>
 		`})
 }
 
 writeDom()
 
-const editButtons = document.querySelectorAll(".edit")
+editButtons = document.querySelectorAll(".edit")
 editButtons.forEach((btn) => {
 	btn.addEventListener("click", (e) => {
 		editModal(e.target.getAttribute("data-edit-id"))
 	})
 })
 
-const viewButtons = document.querySelectorAll(".view")
+viewButtons = document.querySelectorAll(".view")
 viewButtons.forEach((btn) => {
 	btn.addEventListener("click", (e) => {
 		viewModal(e.target.getAttribute("data-edit-id"))
