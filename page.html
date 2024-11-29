@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Page Bootstrap</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<style>
+			.card-img-top {
+				object-fit: cover;
+				max-height: 125px;
+			}
+		</style>
 	</head>
 	<body>
-		<header>
-			<h1>Page principale du cours de développement Web</h1>
+		<header class="d-flex flex-wrap justify-content-center py-3 text-bg-dark">
+			<a href="/" class="d-flex align-items-center text-white text-decoration-none">
+				<span class="fs-4 text-center">Games</span>
+			</a>
 		</header>
 		<div class="main-container">
 			<div class="navigation">
 				<p> </p>
 			</div>
 			<div class="page">
-				<p> </p>
+				<section>
+					<h1 class="text-center mt-2">Top Games</h1>
+				<div class="album py-5 bg-light">
+					<div class="container">
+						<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+														
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<footer>
@@ -28,6 +48,7 @@
 				<p>Contact<br> Email : nathan.monnier@ensea.fr</p>
 			</div>
 		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 		<script src="indexePge.js"></script>
 	</body>
 </html>
