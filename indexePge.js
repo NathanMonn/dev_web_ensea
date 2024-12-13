@@ -42,20 +42,44 @@ const gamesList = [
 		id: 6,
 	},
 ]
+// initialize variable
+let carsList
+
+fetch("http://localhost:3000/api/cars", {
+	method: "GET",
+	headers: {
+		"x-api-key": "secret_phrase_here",
+		"Content-Type": "application/json",
+		Accept: "application/json",
+	},
+})
+	.then((res) => {
+		if (!res.ok) {
+			console.log("your API isn't working !!!")
+		}
+		res.json().then((data) => {
+			console.log(data)
+			carsList = data // Mise à jour de la liste des voitures avec les données récupérées
+			writeDom()  // APRÈS que les données aient été récupérées 
+		})
+	})
+	.catch((error) =>
+		console.error("Erreur lors de la récupération des voitures :", error)
+	)
 
 function writeDom(){
-	gamesList.forEach((game)=>{const articleContainer = document.querySelector(".row")
+	carsList.forEach((cars)=>{const articleContainer = document.querySelector(".row")
 		articleContainer.innerHTML += `
 			<article class="col">
 				<div class="card shadow-sm">
-					<img src="${game.imageUrl}" alt="${game.title}" class="card-img-top" />
+					<img src="${cars.carImage}" alt="${cars.carName}" class="card-img-top" />
 					<div class="card-body">
-						<h3 class="card-title">${game.title}</h3>
-						<p class="card-text">${game.year}</p>
+						<h3 class="card-title">${cars.carName}</h3>
+						<p class="card-text">${cars.carYear}</p>
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary view" data-bs-toggle="modal" data-bs-target="#exampleModal" data-edit-id="${game.id}">View</button>
-								<button type="button" class="btn btn-sm btn-outline-secondary edit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-edit-id="${game.id}">Edit</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary view" data-bs-toggle="modal" data-bs-target="#exampleModal" data-edit-id="${cars.id}">View</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary edit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-edit-id="${cars.id}">Edit</button>
 							</div>
 						</div>
 					</div>
