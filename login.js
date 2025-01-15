@@ -15,9 +15,12 @@ function logIn(formdata) {
 			if (!res.ok) {
 				throw new Error("Identifiants incorrects")
 			}
-			return res.text().then((data) => {
+			return res.json().then((data) => {
 				console.log(data)
-				localStorage.setItem("_id", data)
+				localStorage.setItem("_id", data._id)
+				localStorage.setItem("token", data.token)
+				localStorage.setItem("img", data.userImg)
+				// window.location.pathname = "/"
 			})
 		})
 		.catch((error) => {

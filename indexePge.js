@@ -61,6 +61,19 @@ fetch("http://localhost:3000/api/cars", {
 			console.log(data)
 			carsList = data // Mise à jour de la liste des voitures avec les données récupérées
 			writeDom()  // APRÈS que les données aient été récupérées 
+			editButtons = document.querySelectorAll(".edit")
+			editButtons.forEach((btn) => {
+				btn.addEventListener("click", (e) => {
+					editModal(e.target.getAttribute("data-edit-id"))
+				})
+			})
+
+			viewButtons = document.querySelectorAll(".view")
+			viewButtons.forEach((btn) => {
+				btn.addEventListener("click", (e) => {
+					viewModal(e.target.getAttribute("data-edit-id"))
+				})
+			})
 		})
 	})
 	.catch((error) =>
@@ -88,21 +101,8 @@ function writeDom(){
 		`})
 }
 
-writeDom()
 
-editButtons = document.querySelectorAll(".edit")
-editButtons.forEach((btn) => {
-	btn.addEventListener("click", (e) => {
-		editModal(e.target.getAttribute("data-edit-id"))
-	})
-})
 
-viewButtons = document.querySelectorAll(".view")
-viewButtons.forEach((btn) => {
-	btn.addEventListener("click", (e) => {
-		viewModal(e.target.getAttribute("data-edit-id"))
-	})
-})
 
 function modifyModal(modalTitle, modalBody) {
 	// Écrire le nom du jeu dans le titre du modal
